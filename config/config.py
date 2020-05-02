@@ -7,6 +7,9 @@ class Config(object):
         with open(path, "r") as ymlfile:
             cfg = yaml.safe_load(ymlfile)
 
+        self.puncture_tpl_file = cfg["puncture_tpl_file"]
+        self.gui = cfg["gui"]
+        self.trace = cfg["trace"]
         self.kernel_shape = cfg["kernel_shape"]
         self.kernel_size = cfg["kernel_size"]
         self.match_method = cfg["match_method"]
