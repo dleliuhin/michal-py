@@ -1,0 +1,7 @@
+# PyCharm IDE Build and temporary files and folders
+*build*
+!build.sh
+*.user*
+*tmp*
+.idea*
+__pycache*
