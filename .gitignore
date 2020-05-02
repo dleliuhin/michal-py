@@ -4,4 +4,4 @@
 *.user*
 *tmp*
 .idea*
-__pycache*
+**/*pycache*

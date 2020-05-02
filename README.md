@@ -24,6 +24,7 @@ There are list of inner package dependencies:
 - glob
 - unittest
 - sys 
+- yaml
 
 ---
 

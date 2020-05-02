@@ -1,0 +1,20 @@
+kernel_shape: MORPH_CROSS
+kernel_size: 17
+
+match_method: CV_TM_SQDIFF_NORMED
+
+center_fill_size: 6
+
+hough_threshold: 50
+probabilistic: false
+
+groups_min_distance: 5
+max_gab_tolerance: 100
+
+result_compare_tolerance: 10
+symmetrize_tolerance: 10
+
+val: 0
+population_size: 0
+generations: 0
+min_eval_percentage: 90

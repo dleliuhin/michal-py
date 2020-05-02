@@ -1,11 +1,14 @@
-import cv2
 import glob
+import cv2
+from config.config import Config
+
+# Read configuration file
+config = Config('./cfg/config.yml')
 
 # Read all images from subdirectory
 dataset = [cv2.imread(file) for file in glob.glob('./dataset/*.JPG')]
 
 # for img in dataset:
-
 # Get first image
 img = dataset[0]
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
