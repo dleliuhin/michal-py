@@ -2,10 +2,11 @@ import glob
 import cv2
 from config.config import Config
 from modules.preproces import detect_puncture
+import numpy as np
 
 # Read configuration file
 config = Config('./cfg/config.yml')
-template = cv2.imread('./dataset/templates/' + config.puncture_tpl_file + '.jpg', 0)
+template = cv2.imread('./dataset/templates/' + config.puncture_tpl_file + '.jpg')
 
 # Read all images from subdirectory
 dataset = [cv2.imread(file) for file in glob.glob('./dataset/*.JPG')]
