@@ -33,7 +33,7 @@ if config.gui:
     cv2.imshow('grayscale', pgray)
     cv2.moveWindow('grayscale', 700, 0)
     cv2.imshow('binary', pbinarized)
-    cv2.moveWindow('binary', 1000, 0)
+    cv2.moveWindow('binary', 1050, 0)
     # cv2.imshow('denoised', pdenoised)
     # cv2.moveWindow('denoised', 1300, 0)
 
