@@ -21,10 +21,12 @@ Linux Mint 19.* 64-bit are shown here as examples.
 
 There are list of inner package dependencies:
 
+- cv2
 - glob
 - unittest
 - sys 
 - yaml
+- numpy
 
 ---
 
@@ -41,10 +43,6 @@ See [PyCharm installing](https://www.jetbrains.com/ru-ru/pycharm/).
 
 ---
 
-#### Submodules:
-
----
-
 ## [Tests](./test_michal-py/TEST.md)
 
 ---
@@ -58,12 +56,6 @@ test-suite of some kind. Potentially do this for multiple platforms.
 cd michal-py
 git checkout master
 ./scripts/run.sh
-```
-Build project without updating submodules:
-```
-cd michal-py
-git checkout master
-./scripts/build.sh
 ```
 
 Or using PyCharm IDE:
@@ -91,6 +83,6 @@ Or using PyCharm IDE:
 Reach out to me at one of the following places!
 
 - Telegram at <a href="http://https://telegram.org" target="_blank">`@DLeliuhin`</a>
-- Email at [dleliuhin@gmail.com]().
+- Email at *dleliuhin@gmail.com*.
 
 ---
