@@ -32,9 +32,12 @@ for img, fname in dataset:
 
     if config.trace:
         print('Image writed as ' + nfname + '\n')
-
-    if config.trace:
         cv2.waitKey(0)
+
+    if config.gui:
+        final = cv2.resize(final, (300, 250))
+        cv2.imshow('final', final)
+        cv2.moveWindow('final', 1050, 700)
 
     cv2.destroyAllWindows()
 

@@ -49,10 +49,5 @@ def hw_detector(img, fname, template, config):
         cv2.rectangle(final, (int(res.left), int(res.top)), (int(res.right), int(res.bottom)), (0, 0, 0), 3, 8, 0)
         DrawHardness(final, hardness)
 
-    if config.gui:
-        final = cv2.resize(final, (300, 250))
-        cv2.imshow('final', final)
-        cv2.moveWindow('final', 1050, 700)
-
     return final, hardness.w, hardness.h, hardness.hardness
 # =====================================================================================================================
