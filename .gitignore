@@ -6,3 +6,6 @@
 .idea*
 **/*pycache*
 *venv*
+*.jpg
+*.JPG
+*.png
