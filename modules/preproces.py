@@ -8,14 +8,14 @@ from modules.evaluate import *
 
 
 # =====================================================================================================================
-def detect_puncture(src: np.ndarray, template: np.ndarray, cfg: Config) -> [Result, bool]:
+def detect_puncture(src, template, cfg):
 
     # Preproccessing
     tmp = src.copy()
     denoise(tmp, cv2.MORPH_OPEN, cfg)
 
     # Detect the puncture center
-    center_result: Result = detect_by_template(tmp, template, cfg)
+    center_result = detect_by_template(tmp, template, cfg)
 
     if cfg.trace:
         print('Template matched')
@@ -77,7 +77,7 @@ def detect_puncture(src: np.ndarray, template: np.ndarray, cfg: Config) -> [Resu
 
 
 # =====================================================================================================================
-def denoise(src: np.ndarray, operation: int, cfg: Config):
+def denoise(src, operation, cfg):
     # invert image
     cv2.bitwise_not(src, src)
     kernel = cv2.getStructuringElement(cfg.kernel_shape, (cfg.kernel_size, cfg.kernel_size))
@@ -88,7 +88,7 @@ def denoise(src: np.ndarray, operation: int, cfg: Config):
 
 
 # =====================================================================================================================
-def detect_by_template(src: np.ndarray, template: np.ndarray, cfg: Config) -> Result:
+def detect_by_template(src, template, cfg):
 
     # Detect the template position
     img = template_detect(src, template, cfg.match_method)
@@ -120,7 +120,7 @@ def detect_by_template(src: np.ndarray, template: np.ndarray, cfg: Config) -> Re
 
 
 # =====================================================================================================================
-def template_detect(src: np.ndarray, template: np.ndarray, match_method: int):
+def template_detect(src, template, match_method):
 
     # Do the matching and normalize result
     res = cv2.matchTemplate(cv2.cvtColor(src, cv2.COLOR_GRAY2RGB), template, match_method)

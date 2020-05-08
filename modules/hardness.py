@@ -21,7 +21,7 @@ class HardnessResult(object):
 
 
 # =====================================================================================================================
-def computeHardness(res: Result) -> HardnessResult:
+def computeHardness(res):
     dw = res.right - res.left
     dh = res.bottom - res.top
 

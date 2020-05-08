@@ -5,7 +5,7 @@ from modules.base import *
 
 
 # =====================================================================================================================
-def resultCompare(center: Point, result_hough: Result, result_convex: Result, result: Result, tolerance: float) -> bool:
+def resultCompare(center, result_hough, result_convex, result, tolerance):
 
     if result_hough.top == 0 and result_hough.bottom == 0 and result_hough.left == 0 and result_hough.right == 0:
         return False
@@ -76,7 +76,7 @@ def resultCompare(center: Point, result_hough: Result, result_convex: Result, re
 
 
 # =====================================================================================================================
-def symmetrize(center: Point, result: Result, tolerance: float) -> bool:
+def symmetrize(center, result, tolerance):
 
     # symmetrize the result by the center (if off tolerance)
     dist = abs((center.x - result.left) - (result.right - center.x))

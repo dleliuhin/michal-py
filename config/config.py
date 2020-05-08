@@ -1,6 +1,7 @@
 import yaml
 
 
+# =====================================================================================================================
 class Config(object):
 
     def __init__(self, path):
@@ -20,7 +21,4 @@ class Config(object):
         self.max_gab_tolerance = cfg["max_gab_tolerance"]
         self.result_compare_tolerance = cfg["result_compare_tolerance"]
         self.symmetrize_tolerance = cfg["symmetrize_tolerance"]
-        self.val = cfg["val"]
-        self.population_size = cfg["population_size"]
-        self.generations = cfg["generations"]
-        self.min_eval_percentage = cfg["min_eval_percentage"]
+# =====================================================================================================================

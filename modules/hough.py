@@ -5,7 +5,7 @@ from modules.base import *
 
 
 # =====================================================================================================================
-def HoughTransf(src: np.ndarray, center: Point, cfg: Config) -> Result:
+def HoughTransf(src, center, cfg):
 
     blured = cv2.GaussianBlur(src, (7, 7), 2.0, 2.0)
 
@@ -23,7 +23,7 @@ def HoughTransf(src: np.ndarray, center: Point, cfg: Config) -> Result:
         cv2.imshow('edges', pedges)
         cv2.moveWindow('edges', 700, 350)
 
-    intersections = []
+    intersections = list()
 
     if cfg.probabilistic:
         minLineLength = 50
@@ -71,7 +71,7 @@ def HoughTransf(src: np.ndarray, center: Point, cfg: Config) -> Result:
             cv2.moveWindow('hough', 1050, 350)
 
     # filter and sort the intersections groups
-    group_blocks = sortGroups(intersections.copy(), cfg.groups_min_distance)
+    group_blocks = sortGroups(intersections, cfg.groups_min_distance)
 
     result = Result()
 
@@ -97,13 +97,12 @@ def HoughTransf(src: np.ndarray, center: Point, cfg: Config) -> Result:
         cv2.imshow('inters', cv2.resize(inters, (300, 250)))
         cv2.moveWindow('inters', 1400, 350)
 
-    group_blocks.clear()
     return result
 # =====================================================================================================================
 
 
 # =====================================================================================================================
-def computeIntersect(line1, line2) -> Point:
+def computeIntersect(line1, line2):
     p1 = lineToPointPair(line1)
     p2 = lineToPointPair(line2)
 
@@ -124,7 +123,7 @@ def computeIntersect(line1, line2) -> Point:
 
 
 # =====================================================================================================================
-def lineToPointPair(line) -> list:
+def lineToPointPair(line):
     points = list()
 
     r = line[0][0]
@@ -143,7 +142,7 @@ def lineToPointPair(line) -> list:
 
 
 # =====================================================================================================================
-def acceptLinePair(line1, line2, minTheta) -> bool:
+def acceptLinePair(line1, line2, minTheta):
     theta1 = line1[0][1]
     theta2 = line2[0][1]
 
@@ -158,8 +157,9 @@ def acceptLinePair(line1, line2, minTheta) -> bool:
 
 
 # =====================================================================================================================
-def sortGroups(points: list, min_distance: float) -> list():
+def sortGroups(intersections, min_distance):
 
+    points = intersections
     # sort the lines intersections groups into Groups
     group_blocks = list()
     groups = list()
@@ -215,7 +215,7 @@ def sortGroups(points: list, min_distance: float) -> list():
 
 
 # =====================================================================================================================
-def pointsDistance(p1: Point, p2: Point) -> float:
+def pointsDistance(p1, p2):
     x = p1.x - p2.x
     y = p1.y - p2.y
     return np.sqrt(x**2 + y**2)
@@ -223,7 +223,7 @@ def pointsDistance(p1: Point, p2: Point) -> float:
 
 
 # =====================================================================================================================
-def punctureFind(img: np.ndarray, group_blocks: list, center: Point, result: Result, gab_tolerance: float) -> bool:
+def punctureFind(img, group_blocks, center, result, gab_tolerance):
 
     # Find the puncture position by center and intersections groups
     if len(group_blocks) == 0:
@@ -294,7 +294,7 @@ def punctureFind(img: np.ndarray, group_blocks: list, center: Point, result: Res
 
 
 # =====================================================================================================================
-def whiteLineArea(img: np.ndarray, fr: Point, to: Point) -> bool:
+def whiteLineArea(img, fr, to):
 
     # check for white space between two points
     horizontal = int(fr.y) == int(to.y)

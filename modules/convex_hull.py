@@ -5,7 +5,7 @@ from modules.base import *
 
 
 # =====================================================================================================================
-def ConvexHullMethod(src: np.ndarray, center: Point, cfg: Config) -> Result:
+def ConvexHullMethod(src, center, cfg):
 
     # input image in gray style with applyed threshold
     res = Result()

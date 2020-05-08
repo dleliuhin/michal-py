@@ -1,3 +1,8 @@
+# =====================================================================================================================
+# Author: Dmitrii Leliuhin
+# email: dleliuhin@gmail.com
+# =====================================================================================================================
+
 import glob
 import cv2
 from config.config import Config
@@ -5,7 +10,6 @@ from modules.preproces import detect_puncture
 from modules.hardness import computeHardness
 from plot.plot import *
 import numpy as np
-
 
 # =====================================================================================================================
 
@@ -21,7 +25,6 @@ for img, fname in dataset:
     if config.trace:
         print('\n Processing ' + fname)
 
-    img: np.ndarray = img
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     thresh, binarized = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 

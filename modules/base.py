@@ -17,13 +17,13 @@ class Result(object):
     def __ne__(self, other):
         return not self.__eq__(other)
 
-    def is_none(self) -> bool:
+    def is_none(self):
         return self.top is None or self.bottom is None or self.left is None or self.right is None or self.center is None
 
-    def nis_none(self) -> bool:
+    def nis_none(self):
         return not self.is_none()
 
-    def setPosition(self, top: float, bottom: float, left: float, right: float):
+    def setPosition(self, top, bottom, left, right):
         self.top = top
         self.bottom = bottom
         self.left = left
@@ -40,10 +40,10 @@ class Group(object):
     def __eq__(self, other):
         return self.position == other
 
-    def is_none(self) -> bool:
+    def is_none(self):
         return self.position.is_none()
 
-    def nis_none(self) -> bool:
+    def nis_none(self):
         return not self.is_none()
 
 
@@ -53,11 +53,11 @@ class Point(object):
         self.x = x
         self.y = y
 
-    def is_none(self) -> bool:
+    def is_none(self):
         return self.x is None or self.y is None
 
-    def nis_none(self) -> bool:
+    def nis_none(self):
         return not self.is_none()
 
-    def to_list(self) -> list():
+    def to_list(self):
         return self.x, self.y

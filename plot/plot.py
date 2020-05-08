@@ -6,7 +6,7 @@ from modules.hardness import *
 
 
 # =====================================================================================================================
-def DrawHardness(src, result: Result):
+def DrawHardness(src, result):
     font = cv2.FONT_HERSHEY_SIMPLEX
     fontScale = 1
     thickness = 2
