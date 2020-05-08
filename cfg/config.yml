@@ -1,0 +1,32 @@
+#ideal
+#original
+#smooth
+puncture_tpl_file: smooth
+
+gui: True
+trace: True
+
+#MORPH_RECT = 0
+#MORPH_CROSS = 1
+#MORPH_ELLIPSE = 2
+kernel_shape: 1
+kernel_size: 17
+
+#TM_SQDIFF = 0
+#TM_SQDIFF_NORMED = 1
+#TM_CCORR = 2
+#TM_CCORR_NORMED = 3
+#TM_CCOEFF = 4
+#TM_CCOEFF_NORMED = 5
+match_method: 3
+
+center_fill_size: 6
+
+hough_threshold: 50
+probabilistic: False
+
+groups_min_distance: 5
+max_gab_tolerance: 100
+
+result_compare_tolerance: 10
+symmetrize_tolerance: 10
